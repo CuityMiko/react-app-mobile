@@ -4,7 +4,7 @@ import {Provider} from 'react-redux'
 
 import './styles/index.less'
 
-import App from './containers/App'
+import App from './containers/App.jsx'
 
 import store from './redux/store'
 
