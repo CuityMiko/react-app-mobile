@@ -2,7 +2,7 @@
  * 将reducers方法包装成store对象
  */
 
-import React from 'react'
+// import React from 'react'
 import {createStore, applyMiddleware} from  'redux'
 import thunk from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
