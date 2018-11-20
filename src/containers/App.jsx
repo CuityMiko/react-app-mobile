@@ -4,6 +4,8 @@ import {WingBlank, WhiteSpace, NavBar, Icon} from 'antd-mobile'
 
 import Student from './Student/Index'
 
+import Student1 from './Student1/Index'
+
 export default class App extends Component {
     state = {
         students: [],
@@ -20,7 +22,7 @@ export default class App extends Component {
                     ]}>组件通信</NavBar>
                 <WingBlank size='lg'>
                     <WhiteSpace size="lg" />
-                    <Student />
+                    <Student1 />
                 </WingBlank>
             </div>
         )
