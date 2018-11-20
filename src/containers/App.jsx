@@ -1,27 +1,26 @@
 import React, {Component} from 'react'
 
-import {Button, WingBlank, WhiteSpace, NavBar, Icon} from 'antd-mobile'
+import {WingBlank, WhiteSpace, NavBar, Icon} from 'antd-mobile'
 
-import Routes from '../routes/router';
+import Student from './Student/Index'
 
 export default class App extends Component {
     state = {
-        title: '容器组件'
+        students: [],
     }
     render() {
         return (
             <div>
                 <NavBar
                     mode="dark"
-                    icon={<Icon type="left" />}
+                    // icon={<Icon type="left" />}
                     onLeftClick={() => console.log('onLeftClick')}
                     rightContent={[
                         <Icon key="0" type="ellipsis" />
-                    ]}>会员中心</NavBar>
+                    ]}>组件通信</NavBar>
                 <WingBlank size='lg'>
                     <WhiteSpace size="lg" />
-                    <Button type="primary">点击</Button>
-                    <Routes />
+                    <Student />
                 </WingBlank>
             </div>
         )
