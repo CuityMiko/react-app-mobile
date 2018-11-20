@@ -31,7 +31,7 @@ import { AppContainer } from 'react-hot-loader';
 import Page from './routes/index';
 // import './style/lib/animate.css';
 // import './style/antd/index.less';
-import './style/index.less';
+import './styles/index.less';
 
 // redux 注入操作
 const middleware = [thunk];
