@@ -3,12 +3,12 @@ import React, {Component} from 'react'
 import LoginForm from './components/LoginForm'
 import {Button, WhiteSpace} from 'antd-mobile'
 
-import Proptypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 export default class Login extends Component {
 
     static proptypes = {
-        name: Proptypes.string.isRequired,
+        name: PropTypes.string.isRequired,
         // 数组定义数据类型
         todos: PropTypes.arrayOf(
             PropTypes.shape({
