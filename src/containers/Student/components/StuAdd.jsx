@@ -8,10 +8,6 @@ export default class StuAdd extends Component {
         addStudent: PropTypes.func.isRequired
     }
 
-    static defaultProps = {
-
-    }
-
     state = {
         name: '',
         age: ''

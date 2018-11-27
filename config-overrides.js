@@ -36,6 +36,7 @@ module.exports = function override(config, env) {
                 ],
                 flexbox: 'no-2009',
               }),
+              pxtorem({ rootValue: 100, propWhiteList: [] })
             ],
           },
         },
@@ -49,7 +50,7 @@ module.exports = function override(config, env) {
               "color-text-base": "#FF3B00"
             },
           },
-        },
+        }
       ]
     }
   );

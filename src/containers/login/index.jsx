@@ -8,7 +8,21 @@ import Proptypes from 'prop-types'
 export default class Login extends Component {
 
     static proptypes = {
-        name: Proptypes.string.isRequired
+        name: Proptypes.string.isRequired,
+        // 数组定义数据类型
+        todos: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.number.isRequired,
+                completed: PropTypes.bool.isRequired,
+                text: PropTypes.string.isRequired
+            }).isRequired
+        ).isRequired,
+        // 对象定义数据类型
+        todo: PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            completed: PropTypes.bool.isRequired,
+            text: PropTypes.string.isRequired
+        }).isRequired
     }
 
     static defaultProps = {

@@ -1,9 +1,11 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 import StuAdd from './components/StuAdd'
 import StuList from './components/StuList'
 
 export default class Student extends Component {
+
     state = {
         students: [
             {id: 1, name: 'zhangsan', age: 26}

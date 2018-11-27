@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 export default class StuList extends Component {
 
     static propTypes = {
+        name: PropTypes.node,
         students: PropTypes.array.isRequired,
         delStudent: PropTypes.func.isRequired
     }
