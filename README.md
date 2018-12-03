@@ -1,44 +1,96 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# oilStation-h5
+oilStation-h5 system solution
 
-## Available Scripts
+<img src="https://raw.githubusercontent.com/yezihaohao/react-admin/master/screenshots/logo.png" alt="logo" width="150" height="53" />
 
-In the project directory, you can run:
+### 依赖模块
+<span style="color: rgb(184,49,47);">项目是用create-react-app创建的，主要还是列出新加的功能依赖包</span>
 
-### `npm start`
+<span style="color: rgb(184,49,47);">点击名称可跳转相关网站😄😄</span>
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [react](https://facebook.github.io/react/)(基础开发mvc框架)
+- [react-router](https://react-guide.github.io/react-router-cn/)(react路由)
+- [redux](https://redux.js.org/)(基础用法，但是封装了通用action和reducer)
+- [antd-mobile](https://mobile.ant.design/index-cn)(<span style="color: rgb(243,121,52);">蚂蚁金服开源的react-mobile ui组件框架</span>)
+- [axios](https://github.com/mzabriskie/axios)(<span style="color: rgb(243,121,52);">http请求模块</span>)
+- [echarts-for-react](https://github.com/hustcc/echarts-for-react)(<span style="color: rgb(243,121,52);">可视化图表，别人基于react对echarts的封装，足够用了</span>)
+- [animate.css](http://daneden.me/animate)(<span style="color: rgb(243,121,52);">css动画库</span>)
+- [react-loadable](https://github.com/jamiebuilds/react-loadable)(代码拆分，按需加载，预加载)
+- 其他小细节省略
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### 代码目录
+```js
++-- dist/                                  ---打包的文件目录
++-- config/                                 ---webpack的配置文件目录
++-- node_modules/                           ---npm下载文件目录
++-- public/                                 
+|   --- favicon.ico							---站点ico文件
+|   --- index.html							---首页入口html文件
+|   --- manifest.json						---站点manifest配置
+|   --- theme.less							---站点全局样式配置（自动生成）
++-- src/                                    ---核心代码目录
+|   +-- axios                               ---http请求存放目录
+|   |    --- index.js
+|   +-- pub-sub-events                      ---事件发布订阅机制
+|   |    --- index.js
+|   +-- components                          ---各式各样的组件存放目录
+|   |    +-- common                         ---公共组件封装
+|   |    |    --- BreadcrumbCustom.jsx      ---面包屑组件
+|   |    +-- widget                         ---操作性组件封装
+|   |    |    --- ...   
+|   |    --- HeaderCustom.jsx               ---顶部导航组件
+|   |    --- SiderCustom.jsx                ---左边菜单组件
+|   +-- views                          ---页面容器存放目录
+|   |    +-- charts                         ---图表组件
+|   |    |    --- ...   
+|   |    +-- forms                          ---表单组件
+|   |    |    --- ...   
+|   |    +-- pages                          ---页面组件
+|   |    |    --- ...   
+|   |    +-- tables                         ---表格组件
+|   |    |    --- ...   
+|   |    --- Page.jsx                       ---页面容器
+|   |    --- App.js                         ---组件入口文件
+|   +-- style                               ---项目的样式存放目录，主要采用less编写
+|   +-- utils                               ---工具文件存放目录
+|   +-- redux                               ---redux状态管理目录
+|   |    --- actions-types.js
+|   |    --- actions.js
+|   |    --- reducers.js
+|   |    --- store   
+|   +-- services                            ---结构存放目录
+|   --- index.js                            ---项目的整体js入口文件，包括路由配置等
+--- .env                                    ---启动项目自定义端口配置文件（端口号）
+--- .eslintrc                               ---自定义eslint配置文件，包括增加的react jsx语法限制
+--- package.json                            ---依赖库配置文件
+```
+### 安装运行
+##### 1.下载或克隆项目源码
+```
+git clone -b develop http://gitlab.cloudrelation.com/cuitongyang/oilStation-h5.git
+```
+##### 2.npm安装相关包文件(国内建议增加淘宝镜像源，不然很慢，你懂的😁)
+> 有些老铁遇到运行时报错，首先确定下是不是最新稳定版的nodejs和npm（推荐使用6.10/11.0），切记不要用cnpn
 
-### `npm test`
+```js
+npm install --registry=https://registry.npm.taobao.org
+or
+npm config set --registry=https://registry.npm.taobao.org
+npm install
+```
+##### 3.启动项目
+```js
+npm run dev
+```
+##### 4.打包项目
+```js
+npm run build
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 相关网站
+- 1.react-router：https://reacttraining.com/react-router/web/guides/quick-start
 
-### `npm run build`
+### 约定
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### 主题颜色
+- 1.主题颜色在public/theme.less中修改
